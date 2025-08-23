@@ -10,3 +10,14 @@ def char_count(text: str) -> dict[str,int]:
         else :
             dict[char] = 1
     return dict
+
+def char_report(dict: dict[str,int]):
+    def sort_on(items):
+        return items["num"]
+    
+    chars = []
+    for key in dict:
+        chars.append({"chars": key, "num":dict[key]})
+    
+    chars.sort(reverse=True, key=sort_on)
+    return chars
